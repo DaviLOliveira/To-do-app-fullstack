@@ -24,26 +24,30 @@ namespace TodoApi.Controllers
             return todos;
         }
 
+        // Substitua o seu método PostTodo inteiro por este
         // POST: api/todos
         [HttpPost]
         public async Task<ActionResult<Todo>> PostTodo([FromBody] TodoCreateDto todoDto)
         {
+            // A validação que já existia
             if (todoDto == null || string.IsNullOrWhiteSpace(todoDto.Text))
             {
                 return BadRequest("O texto da tarefa não pode ser vazio.");
             }
 
+            // Criamos a entidade Todo manualmente, com total controle.
             var novaTarefa = new Todo
             {
-                Text = todoDto.Text,
+                Text = todoDto.Text, // Mapeamos o texto do DTO para a nossa entidade
                 IsCompleted = false,
-                UserId = 1,
+                UserId = 1, // Nosso usuário fixo
                 CreatedAt = DateTime.UtcNow
             };
 
             _context.Todos.Add(novaTarefa);
             await _context.SaveChangesAsync();
 
+            // Retorna a tarefa completa com status 201 Created
             return CreatedAtAction(nameof(GetTodoById), new { id = novaTarefa.Id }, novaTarefa);
         }
 

@@ -58,8 +58,7 @@ async function addTodoAPI(textoDaTarefa) {
 
 
     const novaTarefa = {
-        text: textoDaTarefa
-       
+        text: textoDaTarefa  
     };
     try {
         const response = await fetch(`${API_BASE_URL}/todos`, {
@@ -98,16 +97,61 @@ function renderTodos() {
 
         const li = document.createElement('li');
 
+        li.dataset.id = task.id;
+
         if (task.isCompleted) {
             li.classList.add('completed');
         }
 
-        li.textContext = task.Text;
+        li.innerHTML = `
+        <span class="task-text">${task.text}</span>
+        <button class="delete-btn">X</button>
+        `;
 
         listaTarefas.appendChild(li);
     });
 }
 
+async function deleteTodoAPI(id) {
+
+    console.log('Enviando a requisição para apagar a Tarefa ${id^}...');
+
+    try {
+        const response = await fetch('${API_BASE_URL}/todos/${id}', {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro na API ao apagar: ${response.status}');
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Falha ao apagar tarefa:', error);
+        alert('Não foi possivel apagar a tarefa.');
+        return false;
+    }
+}
+
+
+listaTarefas.addEventListener('click', async (evento) => {
+    if (evento.target.classList.contains('delete-btn')) {
+
+        const itemDaLista = evento.target.closest('li');
+
+        const idDaTarefa = itemDaLista.dataset.id;
+
+        console.log('Tentando apagar a tarefa com ID:', idDaTarefa);
+
+        const sucesso = await deleteTodoAPI(idDaTarefa);
+
+        if (sucesso) {
+            fetchTodos();
+        }
+
+    }
+
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {

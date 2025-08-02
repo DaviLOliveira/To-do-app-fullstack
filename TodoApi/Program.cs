@@ -7,10 +7,14 @@ using TodoApi.Data;
             // Configuração do CORS
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAnyOrigin",
-                    builder => builder.AllowAnyOrigin()
+                options.AddPolicy("AllowAnyOrigin", policy =>
+                {
+                builder => builder.AllowAnyOrigin()
                                       .AllowAnyMethod()
                                       .AllowAnyHeader());
+            }
+                   
+            
             });
 
             // Configuração do Banco de Dados
