@@ -9,10 +9,10 @@ using TodoApi.Data;
             {
                 options.AddPolicy("AllowAnyOrigin", policy =>
                 {
-                builder => builder.AllowAnyOrigin()
-                                      .AllowAnyMethod()
-                                      .AllowAnyHeader());
-            }
+                    policy.SetIsOriginAllowed(origin => true)
+                                  .AllowAnyMethod()
+                                  .AllowAnyHeader();
+                });
                    
             
             });

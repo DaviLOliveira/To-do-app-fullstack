@@ -117,7 +117,7 @@ async function deleteTodoAPI(id) {
     console.log('Enviando a requisição para apagar a Tarefa ${id^}...');
 
     try {
-        const response = await fetch('${API_BASE_URL}/todos/${id}', {
+        const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
             method: 'DELETE'
         });
 
@@ -133,30 +133,72 @@ async function deleteTodoAPI(id) {
     }
 }
 
+async function updateTodoAPI(id, updatedTask) {
+    console.log(`Enviando atualização para a tarefa {id}...`);
+    try {
+        const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedTask)
+
+        });
+        if (!response.ok) {
+            throw new Error(`Erro na API ao atualizar: ${response.status}`);
+        }
+        return true;
+
+    } catch (error) {
+        console.error('Falha ao atualizar tarefa:', error);
+        alert('Não foi possível atualizar a tarefa.');
+        return false;
+    }
+}
+
 
 listaTarefas.addEventListener('click', async (evento) => {
-    if (evento.target.classList.contains('delete-btn')) {
+        if (evento.target.classList.contains('delete-btn')) {
 
-        const itemDaLista = evento.target.closest('li');
+            const itemDaLista = evento.target.closest('li');
 
-        const idDaTarefa = itemDaLista.dataset.id;
+            const idDaTarefa = itemDaLista.dataset.id;
 
-        console.log('Tentando apagar a tarefa com ID:', idDaTarefa);
+            console.log('Tentando apagar a tarefa com ID:', idDaTarefa);
 
-        const sucesso = await deleteTodoAPI(idDaTarefa);
+            const sucesso = await deleteTodoAPI(idDaTarefa);
 
-        if (sucesso) {
-            fetchTodos();
+            if (sucesso) {
+                fetchTodos();
+            }
+
         }
+        if (evento.target.classList.contains('task-text')) {
+            const itemDaLista = evento.target.closest('li');
+            const idDaTarefa = parseInt(itemDaLista.dataset.id, 10);
+            const tarefaOriginal = todos.find(t => t.id === idDaTarefa);
 
-    }
+            if (!tarefaOriginal) return;
 
-});
+            const tarefaAtualizada = {
+                ...tarefaOriginal,
+                isCompleted: !tarefaOriginal.isCompleted
+            };
+
+            const sucesso = await updateTodoAPI(idDaTarefa, tarefaAtualizada);
+
+            if (sucesso) {
+                fetchTodos();
+            }
+
+        }
+       
+    });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Página carregada. Aplicação Iniciada.')
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('Página carregada. Aplicação Iniciada.')
 
-    fetchTodos();
-});
+        fetchTodos();
+    });
 

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|c:\\users\\davi luiz\\documents\\reposit\\todoapi\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|solutionrelative:todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|c:\\users\\davi luiz\\documents\\reposit\\todoapi\\todoapi\\front\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|solutionrelative:todoapi\\front\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|c:\\users\\davi luiz\\documents\\reposit\\todoapi\\todoapi\\front\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|solutionrelative:todoapi\\front\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|c:\\users\\davi luiz\\documents\\reposit\\todoapi\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|solutionrelative:todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5666614B-B560-4C05-B0E0-B539A2371818}|TodoApi\\TodoApi.csproj|c:\\users\\davi luiz\\documents\\reposit\\todoapi\\todoapi\\front\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -26,37 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\TodoApi\\Program.cs",
               "RelativeDocumentMoniker": "TodoApi\\Program.cs",
               "ToolTip": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\TodoApi\\Program.cs",
               "RelativeToolTip": "TodoApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T18:32:17.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T18:32:17.543Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "script.js",
               "DocumentMoniker": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\TodoApi\\Front\\script.js",
               "RelativeDocumentMoniker": "TodoApi\\Front\\script.js",
               "ToolTip": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\TodoApi\\Front\\script.js",
               "RelativeToolTip": "TodoApi\\Front\\script.js",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAQwIgAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAMwMIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-02T18:05:03.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\Davi Luiz\\Documents\\reposit\\TodoApi\\TodoApi\\Front\\style.css",
               "RelativeDocumentMoniker": "TodoApi\\Front\\style.css",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "TodoApi\\Front\\style.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-01T19:15:01.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T19:15:01.804Z"
             },
             {
               "$type": "Document",
